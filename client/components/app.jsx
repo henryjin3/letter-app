@@ -1,14 +1,14 @@
 App = React.createClass({
-  getItems() {
-    return [
-      { _id: 1, text: "Item 1"},
-      { _id: 2, text: "Item 2"},
-      { _id: 3, text: "Item 3"}
-    ];
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    return {
+      items: Items.find({}).fetch()
+    };
   },
 
   renderItems() {
-    return this.getItems().map((item) => {
+    return this.data.items.map((item) => {
       return <Item key={item._id} item={item} />;
     });
   },
