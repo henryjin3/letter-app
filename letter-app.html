@@ -1,0 +1,21 @@
+<head>
+  <title>Letter App</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Letter App</h1>
+    </header>
+
+    <ul>
+      {{#each items}}
+        {{> item}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="item">
+  <li>{{text}}</li>
+</template>
